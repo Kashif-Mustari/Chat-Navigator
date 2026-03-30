@@ -1,0 +1,24 @@
+#chat-sidebar {
+  position: fixed;
+  right: 0;
+  top: 100px;
+  width: 60px;
+  background: #111;
+  color: white;
+  padding: 10px;
+  z-index: 9999;
+}
+
+#chat-sidebar button {
+  display: block;
+  margin: 5px 0;
+  width: 100%;
+  background: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#chat-sidebar button:hover {
+  background: #555;
+}
