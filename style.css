@@ -2,11 +2,14 @@
   position: fixed;
   right: 0;
   top: 100px;
-  width: 60px;
+  width: 180px;
   background: #111;
   color: white;
   padding: 10px;
   z-index: 9999;
+  max-height: 80vh;
+  overflow-y: auto;
+  border-left: 2px solid #333;
 }
 
 #chat-sidebar button {
@@ -17,8 +20,16 @@
   color: white;
   border: none;
   cursor: pointer;
+  font-size: 11px;
+  text-align: left;
+  padding: 6px;
+  border-radius: 4px;
 }
 
 #chat-sidebar button:hover {
   background: #555;
+}
+
+#chat-sidebar button.active {
+  background: #00aaff;
 }
