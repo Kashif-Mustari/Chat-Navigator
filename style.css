@@ -1,6 +1,6 @@
 #chat-sidebar {
   position: fixed;
-  right: 0;
+  right: -180px;
   top: 100px;
   width: 180px;
   background: #111;
@@ -10,6 +10,8 @@
   max-height: 80vh;
   overflow-y: auto;
   border-left: 2px solid #333;
+
+  transition: right 0.25s ease;
 }
 
 #chat-sidebar button {
@@ -32,4 +34,13 @@
 
 #chat-sidebar button.active {
   background: #00aaff;
+}
+
+#chat-trigger {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 12px;
+  height: 100%;
+  z-index: 9998;
 }

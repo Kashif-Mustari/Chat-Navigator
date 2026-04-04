@@ -6,14 +6,19 @@ const sidebar = document.createElement("div");
 sidebar.id = "chat-sidebar";
 document.body.appendChild(sidebar);
 
-// Get user messages (multi-platform)
+// Create trigger area
+const trigger = document.createElement("div");
+trigger.id = "chat-trigger";
+document.body.appendChild(trigger);
+
+// Get user messages
 function getUserMessages() {
   // ChatGPT
   if (host.includes("chat.openai.com") || host.includes("chatgpt.com")) {
     return document.querySelectorAll('[data-message-author-role="user"]');
   }
 
-  // Gemini (robust fallback approach)
+  // Gemini (fallback selectors)
   if (host.includes("gemini.google.com")) {
     return document.querySelectorAll('user-query, .user-query, [data-query], [role="textbox"]');
   }
@@ -32,7 +37,6 @@ function getPreviewText(element) {
 // Update sidebar
 function updateSidebar() {
   const messages = getUserMessages();
-
   if (!messages || messages.length === 0) return;
 
   sidebar.innerHTML = "";
@@ -74,9 +78,8 @@ function highlightCurrent() {
   });
 }
 
-// Debounced observer (performance fix)
+// Debounce observer
 let timeout;
-
 const observer = new MutationObserver(() => {
   clearTimeout(timeout);
   timeout = setTimeout(updateSidebar, 300);
@@ -87,8 +90,28 @@ observer.observe(document.body, {
   subtree: true
 });
 
-// Scroll listener
+// Scroll highlight
 window.addEventListener("scroll", highlightCurrent);
 
-// Initial run
+// Initial load
 setTimeout(updateSidebar, 1000);
+
+// ===== SIDEBAR INTERACTION (NO FLICKER) =====
+
+// Open
+trigger.addEventListener("mouseenter", () => {
+  sidebar.style.right = "0";
+});
+
+sidebar.addEventListener("mouseenter", () => {
+  sidebar.style.right = "0";
+});
+
+// Close safely
+sidebar.addEventListener("mouseleave", () => {
+  setTimeout(() => {
+    if (!sidebar.matches(":hover") && !trigger.matches(":hover")) {
+      sidebar.style.right = "-180px";
+    }
+  }, 150);
+});
