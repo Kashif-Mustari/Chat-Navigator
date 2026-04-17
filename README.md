@@ -26,7 +26,7 @@ Chat-Navigator automatically creates a structured list of your questions so you 
 1. Download the repo  
 2. Open Chrome → Extensions  
 3. Enable Developer Mode  
-4. Load unpacked → select folder  
+4. Load unpacked → select folder('manifest.json')
 
 ## 🔒 Privacy
 - No data tracking  
