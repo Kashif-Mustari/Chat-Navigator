@@ -28,25 +28,18 @@ Chat-Navigator/
 |-- README.md
 ```
 
-## Installation
+## How To Add
 
-1. Clone or download this repository.
+1. Download or clone this repo.
 
    ```bash
    git clone https://github.com/Kashif-Mustari/Chat-Navigator.git
    ```
 
-2. Open Chrome and visit:
-
-   ```text
-   chrome://extensions/
-   ```
-
+2. Open `chrome://extensions/`.
 3. Turn on Developer mode.
-
 4. Click Load unpacked.
-
-5. Select the `Chat-Navigator` project folder.
+5. Select the `Chat-Navigator` folder.
 
 ## Usage
 
