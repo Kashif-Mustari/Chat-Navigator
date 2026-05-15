@@ -41,6 +41,12 @@ Chat-Navigator/
 4. Click Load unpacked.
 5. Select the `Chat-Navigator` folder.
 
+For Firefox temporary add-on:
+
+1. Open `about:debugging#/runtime/this-firefox`.
+2. Click Load Temporary Add-on.
+3. Select `manifest.json`.
+
 ## Usage
 
 1. Open ChatGPT or Gemini.
